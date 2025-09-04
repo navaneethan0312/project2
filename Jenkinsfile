@@ -1,5 +1,8 @@
 pipeline {
-    agent any
+    agent 
+        docker {
+            image 'maven:3.8.1-openjdk-11'
+        }
     
     tools {
         maven 'Maven-3.8.11'  // Make sure this matches your Maven installation in Jenkins
