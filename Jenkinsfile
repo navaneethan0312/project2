@@ -20,12 +20,6 @@ pipeline {
         
         stage('Build') {
             steps {
-              echo 'Checking Java version...'
-              sh 'JDK-17'
-        
-             echo 'Checking Maven version...'
-             sh 'Maven-3.8.1'
-        
                echo 'Building the application...'
                 sh 'mvn compile'
             }
