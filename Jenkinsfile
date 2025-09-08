@@ -8,6 +8,8 @@ pipeline {
     
     environment {
         MAVEN_OPTS = '-Dmaven.repo.local=.m2/repository'
+        JAVA_HOME = tool name: 'JDK-17', type: 'jdk'
+        PATH = "${env.JAVA_HOME}/bin:${env.PATH}"
     }
     
     stages {
