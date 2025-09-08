@@ -3,13 +3,11 @@ pipeline {
     
     tools {
         maven 'Maven-3.8.1'  // Make sure this matches your Maven installation in Jenkins
-        jdk 'JDK-17'         // Make sure this matches your JDK installation in Jenkins
+        jdk 'JDK-21'         // Make sure this matches your JDK installation in Jenkins
     }
     
     environment {
         MAVEN_OPTS = '-Dmaven.repo.local=.m2/repository'
-        JAVA_HOME = tool name: 'JDK-17', type: 'jdk'
-        PATH = "${env.JAVA_HOME}/bin:${env.PATH}"
     }
     
     stages {
