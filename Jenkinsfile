@@ -20,10 +20,7 @@ pipeline {
         
         stage('Build') {
             steps {
-                echo 'Checking if pom.xml exists...'
-                sh 'ls -la' 
-                
-                echo 'Building the application...'
+               echo 'Building the application...'
                 sh 'mvn compile'
             }
         }
