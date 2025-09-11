@@ -82,8 +82,8 @@ pipeline {
                 echo 'Running integration tests...'
                 sh '''
                     echo "Testing application endpoints..."
-                    curl -f http://localhost:8080/ || exit 1
-                    curl -f http://localhost:8080/hello || exit 1
+                    curl -f http://localhost:8081/ || exit 1
+                    curl -f http://localhost:8081/hello || exit 1
                 '''
             }
         }
