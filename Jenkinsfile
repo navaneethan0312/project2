@@ -81,7 +81,9 @@ pipeline {
             steps {
                 echo 'Running integration tests...'
                 sh '''
-                    echo "Testing application endpoints..."
+                   nohup java -jar target/demo-0.0.1-SNAPSHOT.jar --server.port=8081 > app.log 2>&1 &
+                   sleep 10   # wait for the app to start
+                   echo "Testing application endpoints..."
                     curl -f http://localhost:8081/ || exit 1
                     curl -f http://localhost:8081/hello || exit 1
                 '''
