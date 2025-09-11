@@ -66,13 +66,13 @@ pipeline {
                     pkill -f "demo-1.0.0.jar" || true
                     
                     echo "Starting new application..."
-                    nohup java -jar target/demo-1.0.0.jar --server.port=8080 > app.log 2>&1 &
+                    nohup java -jar target/demo-1.0.0.jar --server.port=8081 > app.log 2>&1 &
                     
                     echo "Waiting for application to start..."
                     sleep 10
                     
                     echo "Testing application health..."
-                    curl -f http://localhost:8080/health || exit 1
+                    curl -f http://localhost:8081/health || exit 1
                 '''
             }
         }
